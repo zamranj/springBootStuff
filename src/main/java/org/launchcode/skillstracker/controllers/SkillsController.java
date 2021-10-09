@@ -50,7 +50,6 @@ public class SkillsController {
                ;
    }
    @PostMapping("form")
-
     public String submitForm(@RequestParam String name, @RequestParam String firstChoice,
                              @RequestParam String secondChoice,@RequestParam String thirdChoice){
         return "redirect:/results/" + name+"/"+firstChoice+"/"+secondChoice+"/"+thirdChoice;
@@ -62,12 +61,28 @@ public class SkillsController {
     public String displayResults(@PathVariable String name, @PathVariable String firstChoice, @PathVariable String secondChoice,
                                 @PathVariable String thirdChoice){
 
-       return "<h2>"+name+"</h2>"
-               +"<ol>"
-               +"<li>"+firstChoice + "</li>"
-               +"<li>"+secondChoice + "</li>"
-               +"<li>"+thirdChoice + "</li>"
-               +"</ol>";
+       return "<h2>"+name+"'s favorite programing languages"+"</h2>"+
+               "<ol>" +
+               "<table border='1'>" +
+                "<tr>" +
+                    "<th>Choice</th>" +
+                    "<th>Language</th>" +
+                "</tr>" +
+                "<tr>" +
+                   "<th>1</th>" +
+                   "<th>"+firstChoice+"</th>" +
+               "</tr>" +
+               "<tr>" +
+                   "<th>2</th>" +
+                   "<th>"+secondChoice+"</th>" +
+               "</tr>" +
+               "<tr>" +
+                   "<th>3</th>" +
+                   "<th>"+thirdChoice+"</th>" +
+               "</tr>" +
+               "</table>";
+
+
    }
 
 
